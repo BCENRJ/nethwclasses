@@ -166,7 +166,6 @@ best_student.lec_feedback(second_lecturer, 'Java', 9)
 best_student.lec_feedback(second_lecturer, 'Java', 7)
 # Instances/экземпляры 
 
-
 print(reviewing_teacher, one_lecturer, best_student, '', sep='\n\n')
 print(one_lecturer > second_lecturer, one_lecturer < second_lecturer, best_student <= another_student, best_student >= another_student, '\n')
 print(f'Инфо Студенты: {best_student.grades} и {another_student.grades}\nИнфо Лекторы: {one_lecturer.feedback} и {second_lecturer.feedback}\n')
@@ -198,11 +197,3 @@ def cal_average_fb_of_lecturers(lci, coursename):
             return 'Неверно указан курс'
     return f'Средняя оценка за лекции по лекторам: {total / len(lci):.1f}'
 print(cal_average_fb_of_lecturers(z,k))
-
-
-
-
-
-
-
-

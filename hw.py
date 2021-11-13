@@ -1,4 +1,5 @@
-# There are 4 classes(blueprints for creating instances), Student, Mentor and 2 childs of Mentor > Lecturer & Reviewer
+# There are 4 classes(blueprints for creating instances):
+# Student, Mentor and 2 childs of Mentor > Lecturer & Reviewer
 class Student:
     # This method for initializing attributes of the class
     # 'self' for accessing attributes and methods of the class (представляет экземпляр самого обьекта)
@@ -31,7 +32,10 @@ class Student:
         return ','.join(map(str, forlist))
     # Данный метод для строкового представления обьекта    
     def __str__(self):
-        return f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за домашние задания: {self.calculate_average_grade():.1f}\nКурсы в процессе изучения: {", ".join(str(i) for i in self.courses_in_progress)}\nЗавершенные курсы: {", ".join(str(i) for i in self.finished_courses)}'
+        return f'''Имя: {self.name}\nФамилия: {self.surname}
+Средняя оценка за домашние задания: {self.calculate_average_grade():.1f}
+Курсы в процессе изучения: {", ".join(str(i) for i in self.courses_in_progress)}
+Завершенные курсы: {", ".join(str(i) for i in self.finished_courses)}'''
     # Compare one student with another (magic method)
     def __lt__(self, other):
         if not isinstance(other, Student):
@@ -167,8 +171,10 @@ best_student.lec_feedback(second_lecturer, 'Java', 7)
 # Instances/экземпляры 
 
 print(reviewing_teacher, one_lecturer, best_student, '', sep='\n\n')
-print(one_lecturer > second_lecturer, one_lecturer < second_lecturer, best_student <= another_student, best_student >= another_student, '\n')
-print(f'Инфо Студенты: {best_student.grades} и {another_student.grades}\nИнфо Лекторы: {one_lecturer.feedback} и {second_lecturer.feedback}\n')
+print(one_lecturer > second_lecturer, one_lecturer < second_lecturer,
+      best_student <= another_student, best_student >= another_student, '\n')
+print(f'''Инфо Студенты: {best_student.grades} и {another_student.grades}
+Инфо Лекторы: {one_lecturer.feedback} и {second_lecturer.feedback}\n''')
 
 # Studnets class instances
 x = [best_student, another_student]
@@ -197,3 +203,5 @@ def cal_average_fb_of_lecturers(lci, coursename):
             return 'Неверно указан курс'
     return f'Средняя оценка за лекции по лекторам: {total / len(lci):.1f}'
 print(cal_average_fb_of_lecturers(z,k))
+
+
